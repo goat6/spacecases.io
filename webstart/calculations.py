@@ -12,7 +12,7 @@ def iscasesin(guilds, Client_guilds):
 
 def updateLD(Client, LD_db, db, time):
     LD_db.get_leaderboard()
-    if time.time() - LD_db.last_update["time"] < 8600:
+    if time.time() - LD_db.last_update["time"] < 86400:
         return [item for item in LD_db.leaderboard], True
     db.get_leaderboard()
     leaderboard = []
@@ -41,16 +41,15 @@ def updateLD(Client, LD_db, db, time):
 
 
 def get_user_inv(db, datetime, id, LD_db):
+    LD_db.get_leaderboard()
     user = LD_db.Leaderboard.find_one({"_id": id})
-    if LD_db.leaderboard == []:
-        LD_db.get_leaderboard()
     user["rank"] = [user for user in LD_db.leaderboard].index(user) + 1
     user["inventory"] = [
         {
             "name": item["name"],
             "float": item["float"],
             "image_url": db.skin_data["skins"][item["name"]]["image_url"],
-            "price" : db.skin_data["skins"][item["name"]]["price"] / 100
+            "price": db.skin_data["skins"][item["name"]]["price"] / 100,
         }
         for item in user["inventory"]
     ]

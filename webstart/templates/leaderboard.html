@@ -75,19 +75,19 @@
           <img
             class="profile-pic"
             id="button"
-            src="{{id[3]}}"
+            src="{{id['image_url']}}"
             alt=""
             onerror="lbImgError(this);"
           />
-          <p>{{id[0]}}</p>
+          <p>{{id['username']}}</p>
         </span>
-        <p>${{id[1] / 100}}</p>
-        {%if id[4]%}
-        <p>{{id[4]}}</p>
+        <p>${{id['networth']}}</p>
+        {%if id['inventory']%}
+        <p>{{id['inventory'][0]['name']}}</p>
         {%else%}
         <p>Null</p>
         {%endif%}
-        <p>{{id[2]}}</p>
+        <p>{{id['lang']}}</p>
       </div>
       {%endfor%} {%endif%} {%endif%}
       {%if Leaderboard %} {% if iterate == False %}
