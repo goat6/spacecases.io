@@ -187,29 +187,31 @@ function inventorySort() {
     };
 }
 function switchInventoryPage() { 
-    
-    pages = document.querySelectorAll(".profile-inv");
-    leftButton = document.querySelector(".invButton1");
-    rightButton = document.querySelector(".invButton2");
-    visualIndicator = document.querySelector(".page-count")
-    function switchPages(side) {
-        if (side === "left") {
-            if (counter === 1) counter = pages.length
-            else { counter -= 1 }
-        } else if (side === "right") {
-            if (counter === pages.length) { counter = 1 }
-            else { counter += 1 }
+    items = document.querySelectorAll(".inventoryItem");
+    if (items[0] != undefined) {
+        pages = document.querySelectorAll(".profile-inv");
+        leftButton = document.querySelector(".invButton1");
+        rightButton = document.querySelector(".invButton2");
+        visualIndicator = document.querySelector(".page-count")
+        function switchPages(side) {
+            if (side === "left") {
+                if (counter === 1) counter = pages.length
+                else { counter -= 1 }
+            } else if (side === "right") {
+                if (counter === pages.length) { counter = 1 }
+                else { counter += 1 }
+            }
+            visualIndicator.innerHTML = counter;
+            pages.forEach(element => element.style.visibility = "hidden");
+            pages[counter - 1].style.visibility = "visible";
         }
-        visualIndicator.innerHTML = counter;
         pages.forEach(element => element.style.visibility = "hidden");
-        pages[counter - 1].style.visibility = "visible";
-    }
-    pages.forEach(element => element.style.visibility = "hidden");
-    pages[0].style.visibility = "visible";
-    if (pages[0] !== undefined) {
-        counter = 1;
-        leftButton.addEventListener("click", () => { switchPages("left") });
-        rightButton.addEventListener("click", () => { switchPages("right") });
+        pages[0].style.visibility = "visible";
+        if (pages[0] !== undefined) {
+            counter = 1;
+            leftButton.addEventListener("click", () => { switchPages("left") });
+            rightButton.addEventListener("click", () => { switchPages("right") });
+        }
     }
 }
 

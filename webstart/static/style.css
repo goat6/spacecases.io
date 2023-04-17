@@ -329,6 +329,7 @@ h1,.text-header-summary, .social-info p {
     width: 45svw;
     height: auto;
     gap: 1.5svw;
+    position: relative;
 }
 .nav-links a{
     color: var(--colour1);
@@ -457,9 +458,6 @@ h1,.text-header-summary, .social-info p {
     transform: rotate(180deg);
     transition: ease-out 200ms;
 }
-.svg:hover{
-    scale: 2.5;
-}
 .svg.active {
     transform: rotate(-360deg);
 }
@@ -479,7 +477,8 @@ h1,.text-header-summary, .social-info p {
     border-radius: 10px;
     transition: ease-out 100ms;
     visibility: hidden;
-    transform: translate(-6.5svw,1svh);
+    top: 120%;
+    right: 0;
 }
 .dropdown.active {
     visibility: visible;
@@ -1117,9 +1116,16 @@ h1,.text-header-summary, .social-info p {
     opacity: 0.8;
     filter: blur(1px);
 }
+.tou-wrapper {
+    height: max-content;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+}
 @media (max-width:500px) {
     .nav-links a {
-        visibility: hidden;
+        display: none;
     }
     .main-text {
         font-size: 10svh;
@@ -1128,11 +1134,21 @@ h1,.text-header-summary, .social-info p {
         font-size: 3svh;
     }
     .front-buttons {
-        flex-direction: column;
+        flex-direction: horizontal;
     }
     .front-buttons a{
         width: 15svh;
+        height: 7svh;
         font-size: 1.5svh;
+    }
+    .front-buttons img {
+        width: 3.5svh;
+    }
+    .page-divider {
+        padding: 2svh;
+    }
+    .divider-text,.socials-link {
+        text-align: center;
     }
     .section {
         height: auto    ;
