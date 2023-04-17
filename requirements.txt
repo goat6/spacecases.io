@@ -2,4 +2,3 @@ Zenora
 flask
 certifi
 pymongo
-os
