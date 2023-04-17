@@ -2,3 +2,4 @@ Zenora
 flask
 certifi
 pymongo
+black
