@@ -1,25 +1,26 @@
 
 # spacecases.io
 
-Website for SpaceCases discord bot
+Website for the Space Cases discord bot - CS2's premier case unboxing simulator.
 
 
 ## Authors
 
-- [@goat6](https://github.com/goat6) - Front-End
-- [@RGCSERG](https://github.com/RGCSERG) - Back-End
+- [@goat6](https://github.com/goat6) - Front end
+- [@RGCSERG](https://github.com/RGCSERG) - Back end
 - [@Spacerulerwill](https://github.com/Spacerulerwill) - Discord Bot
 
-## Dontate to us
+## Help support the project & get premium perks
 
-- [patreon]()
+- [patreon](https://patreon.com/SpaceCases)
 
 ## Features
 
 - Add Space Cases bot to your Discord server
-- Discord login and access to your inventory, stats and trades
-- Access global and server leaderboards
-- Flask run backend, coded in vanilla css, js and html
+- Discord login and access to your inventory & stats
+- Access the global leaderboard
+- Flask run backend, coded in vanilla CSS, JavaScript and HTML
+- MongoDB database
 
 ## Deployment
 
