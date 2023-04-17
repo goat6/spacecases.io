@@ -44,7 +44,11 @@
     </span>
     <div class="profile-inv noselect">
       {%for item in user_data['inventory']%}
-      <img class="inventoryItem noselect" src="{{item['image_url']}}" />
+      <span class="inventoryItem noselect">
+        <img src="{{item['image_url']}}" />
+        <p class="item-price">${{item['price']}}</p>
+        <p class="item-float">{{item['float']}}</p>
+      </span>
       {%endfor%}
     </div>
     {%endif%}
