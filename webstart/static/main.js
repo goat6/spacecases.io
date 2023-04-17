@@ -124,8 +124,6 @@ function leaderboardCycle() {
                 serverLB.style.visibility = "hidden";
                 globalLB.style.visibility = "visible";
             }
-            console.log(count)
-            
         })
     }
     
@@ -164,7 +162,6 @@ function inventorySort() {
         profileDiv.innerHTML = null
         profileDiv.remove()
         newDiv = null
-        console.log(items)
         let counter = 0
         for (let i = 0; i < items.length; i++) {
             if ((i) % 9 === 0 || i === 0) {
@@ -176,12 +173,15 @@ function inventorySort() {
             newDiv.append(items[i])
             counter += 1
         }
-        for (let j = 0; j < counter - 1; j++) {
+        for (let j = 0; j < 9-counter; j++) {
+            placeHolderSpan = document.createElement("span");
+            placeHolderSpan.classList.add("inventoryItem");
+            placeHolderSpan.classList.add("noselect");
             placeHolderImg = document.createElement("img");
-            placeHolderImg.classList.add("inventoryItem");
-            placeHolderImg.src = "http://via.placeholder.com/640x360"
+            placeHolderImg.src = "http://via.placeholder.com/640x360";
             placeHolderImg.style.opacity = 0;
-            newDiv.append(placeHolderImg);
+            placeHolderSpan.append(placeHolderImg);
+            newDiv.append(placeHolderSpan);
         }
         profileGrid.append(newDiv)
     };
@@ -213,6 +213,13 @@ function switchInventoryPage() {
     }
 }
 
+function trimFloats() { 
+    floats = document.querySelectorAll(".item-float");
+    floats.forEach(float => { 
+        float.innerHTML = ((float.innerHTML * 1).toFixed(3))
+    })
+}
+
 window.onload = function () {
     inventorySort();
     buttonHover();
@@ -222,4 +229,5 @@ window.onload = function () {
     textResize();
     window.addEventListener("scroll", scrollReveal);
     switchInventoryPage();
+    trimFloats();
 }

@@ -855,11 +855,37 @@ h1,.text-header-summary, .social-info p {
     z-index: 3;
     overflow: hidden;
 }
-.profile-inv img,.inventoryItem{
+.profile-inv img {
     min-width: 0;
     min-height: 0;
     height: 80%;
     aspect-ratio: 1/1;
+}
+.inventoryItem {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    aspect-ratio: 1/1;
+    min-width: 0;
+    min-height: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.item-price {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0.2svw;
+    border-radius: 5px;
+    color: var(--colour1);
+    padding-right: 0.5svw;
+}
+.item-float {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding-left: 0.5svw;
 }
 .page-count {
     padding: 0.5svw 1svw 0.5svw 1svw;
